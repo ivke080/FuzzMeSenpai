@@ -84,10 +84,6 @@ int main(int argc, char *argv[])
 
     for (std::thread& t : threads)
         t.join();
-
-    for (const std::string& url : fuzzed) {
-        std::cout << url << std::endl;
-    }
-
+    
     return 0;
 }
