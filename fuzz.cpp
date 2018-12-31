@@ -13,8 +13,6 @@
 #include <curlpp/Exception.hpp>
 #include <curlpp/Infos.hpp>
 
-std::vector<std::string> fuzzed;
-
 void fuzz(const std::string& url, const std::string& file)
 {
     std::cout << std::this_thread::get_id() << std::endl;
@@ -39,7 +37,6 @@ void fuzz(const std::string& url, const std::string& file)
             if (curlpp::infos::ResponseCode::get(request) == 200)
             {
                 std::cout << url + end + line << std::endl;
-                fuzzed.push_back(url + end + line);
             }
         }
     }
